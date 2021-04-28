@@ -5,6 +5,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./assets/css/style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <title>Weather Dashboard</title>
 </head>
 <body>
@@ -12,15 +14,22 @@
       <h1>Weather Dashboard</h1>
    </header>
 
-   <main>
-      <div>
-         <h2>Search for a City:</h2>
-         <input type="text" id="city-name" name="city-name">
-         <button id="search-btn">Search</button>
+   <main class="container-fluid">
+      <div class="row">
+         <div class="col-3">
+            <h2>Search for a City:</h2>
+            <input type="text" id="city-name" name="city-name">
+            <button id="search-btn">Search</button>
+         </div>
+         
+         <div class="col-9">
+            <div id="current-weather"></div>
+            <div id="forecast" class="row"></div>
+         </div>
       </div>
-
-      <div></div>
+      
    </main>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    <script src="./assets/js/script.js"></script>
 </body>
 </html>
