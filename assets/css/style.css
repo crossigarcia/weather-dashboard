@@ -18,3 +18,13 @@ header {
 .btn:hover {
    background-image: linear-gradient(45deg, #2a83e9 15%, #3385e2 35%, #2277d8 50%);
 }
+
+.card p {
+   display: inline;
+   margin: 10px;
+}
+
+.forecast-icon {
+   max-width: 50px;
+   max-height: 50px;
+}
