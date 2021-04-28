@@ -1,6 +1,10 @@
 $('#search-btn').on('click', function(){
    let cityName = $('#city-name').val();
+
+   $('.card').text('');
+
    getWeatherInfo(cityName);
+   getForecast(cityName);
 });
 
 function getWeatherInfo(cityName) {
@@ -9,7 +13,7 @@ function getWeatherInfo(cityName) {
    fetch(apiUrl)
    .then(res => res.json())
    .then(data => {
-      let card = $('<div>').addClass('card');
+      let mainCard = $('<div>').addClass('card');
       let title = $('<h3>').addClass('card-title').text(data.name);
       // let icon = data.weather.icon;
       // title.append(icon);
@@ -21,9 +25,9 @@ function getWeatherInfo(cityName) {
 
       //getUvi(lat, lon);
 
-      card.append(title, temp, wind, humidity);
+      mainCard.append(title, temp, wind, humidity);
 
-      $('#current-weather').append(card);
+      $('#current-weather').append(mainCard);
 
 
    });
@@ -42,11 +46,17 @@ function getWeatherInfo(cityName) {
 //};
 
 function getForecast(cityName) {
-   let thirdApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=a4fc2c49c4ea222299041dc24c1b4c99`;
+   let thirdApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=a4fc2c49c4ea222299041dc24c1b4c99&units=imperial`;
 
    fetch(thirdApiUrl)
    .then(res => res.json())
    .then(data => {
+      let cardOne = $('div').addClass('card col-2');
+      let title = $('<h4>').addClass('card-title').text(data.list[1].dt_txt);
+      let temp = $('<p>').addClass('card-text').text(`Temp: ${data.list[1].main.temp}\xB0F`);
 
+      cardOne.append(title, temp);
+
+      $('#forecast').append(cardOne);
    });   
 };
