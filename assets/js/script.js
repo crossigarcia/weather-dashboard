@@ -37,6 +37,13 @@ function getWeatherInfo(cityName) {
 
       getUvi(lat, lon);
       getForecast(cityName);
+   })
+   .catch((error) => {
+      $('#search-history').empty(); 
+      
+      let errorMessage = $('<p>').addClass('error-mssg').text('Please enter a valid city name!');
+
+      $('#error-message').append(errorMessage);
    });
 };
 
