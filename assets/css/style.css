@@ -52,3 +52,11 @@ ul {
    margin-bottom: 10px;
 }
 
+.error-mssg {
+   color: red;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 5px;
+   margin-bottom: 0;
+}
+
