@@ -20,6 +20,7 @@ function getWeatherInfo(cityName) {
    .then(res => res.json())
    .then(data => {
       $('#current-weather').empty();
+      $('#error-message').empty();
       let mainCard = $('<div>').addClass('col-11 main-card card border-dark mb-3 card-body text-dark');
       let title = $('<h3>').addClass('card-title').text(`${data.name}`);
       let icon = $('<img>').attr('src', `http://openweathermap.org/img/w/${data.weather[0].icon}.png`).addClass('forecast-icon');
@@ -40,7 +41,7 @@ function getWeatherInfo(cityName) {
    })
    .catch((error) => {
       $('#search-history').empty(); 
-      
+
       let errorMessage = $('<p>').addClass('error-mssg').text('Please enter a valid city name!');
 
       $('#error-message').append(errorMessage);
