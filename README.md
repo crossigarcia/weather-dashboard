@@ -8,6 +8,13 @@ An application that will allow users to search for city names and get their curr
 * When a user searches for a city the name is stored and displayed as a button on the page, when the button is click the information for that city is again retrieved and displayed on the page.
 * Application will have responsive styling to be usable on a variety of screen sizes. 
 
+## APIs
+https://openweathermap.org/current
+
+https://openweathermap.org/forecast5
+
+https://openweathermap.org/api/one-call-api
+
 ## Link to Deployed Application:
 https://crossigarcia.github.io/weather-dashboard
 
