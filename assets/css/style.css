@@ -32,6 +32,10 @@ header {
    max-height: 50px;
 }
 
+#forecast-card {
+   padding: 15px 25px 15px 25px;
+}
+
 ul {
    list-style-type: none;
 }
